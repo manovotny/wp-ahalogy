@@ -25,42 +25,18 @@ if ( ! defined( 'WPINC' ) ) {
 
 }
 
-/* Support
----------------------------------------------------------------------------------- */
-
-wp_enqueue_script( 'TODO' );
-
 /* Libraries
 ---------------------------------------------------------------------------------- */
 
-require_once __DIR__ . '/lib/';
+require_once __DIR__ . '/lib/wp-enqueue-util/wp-enqueue-util.php';
 
 /* Classes
 ---------------------------------------------------------------------------------- */
 
-if ( ! class_exists( 'TODO' ) ) {
+if ( ! class_exists( 'WP_Ahalogy' ) ) {
 
-    require_once __DIR__ . '/classes/';
+    require_once __DIR__ . '/classes/class-wp-ahalogy.php';
 
-}
-
-/* Widgets
----------------------------------------------------------------------------------- */
-
-if ( ! class_exists( 'TODO' ) ) {
-
-    require_once __DIR__ . '/classes/widgets/';
-
-    add_action( 'widgets_init', create_function( '', 'register_widget("TODO");' ) );
+    WP_Ahalogy::get_instance();
 
 }
-
-/* Admin
----------------------------------------------------------------------------------- */
-
-require_once __DIR__ . '/admin/inc/';
-
-/* Includes
----------------------------------------------------------------------------------- */
-
-require_once __DIR__ . '/inc/';
