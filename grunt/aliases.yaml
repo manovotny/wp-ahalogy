@@ -40,4 +40,5 @@ test:
 release:
   - build
   - replace:project_version
+  - replace:update_project
   - generate
