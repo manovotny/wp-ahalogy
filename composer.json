@@ -1,13 +1,13 @@
 {
-  "name": "manovotny/wp-ahalogy",
-  "version": "1.0.0",
-  "description": "Adds Ahalogy to your WordPress site.",
-  "type": "library",
-  "homepage": "https://github.com/manovotny/wp-ahalogy",
-  "license": "GPL-3.0+",
-  "require": {
-    "manovotny/wp-enqueue-util": "0.2.0",
-    "manovotny/wp-phpunit-helpers": "0.1.0",
-    "phpunit/phpunit": "4.1.*"
-  }
+    "name": "manovotny/wp-ahalogy",
+    "version": "1.0.0",
+    "description": "Adds Ahalogy to your WordPress site.",
+    "type": "library",
+    "homepage": "https://github.com/manovotny/wp-ahalogy",
+    "license": "GPL-3.0+",
+    "require": {
+        "manovotny/wp-enqueue-util": "0.2.0",
+        "manovotny/wp-phpunit-helpers": "0.1.0",
+        "phpunit/phpunit": "4.1.*"
+    }
 }
