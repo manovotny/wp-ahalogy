@@ -4,10 +4,40 @@
     "description": "Adds Ahalogy to your WordPress site.",
     "type": "library",
     "homepage": "https://github.com/manovotny/wp-ahalogy",
+    "authors": [
+        {
+            "name": "AUTHOR_NAME",
+            "email": "author@email.com",
+            "homepage": "http://author-url.com",
+            "role": "Developer"
+        }
+    ],
     "license": "GPL-3.0+",
+    "keywords": [
+        "ahalogy",
+        "pinterest",
+        "wordpress"
+    ],
     "require": {
-        "manovotny/wp-enqueue-util": "0.2.0",
+        "manovotny/wp-enqueue-util": "1.1.0"
+    },
+    "require-dev": {
         "manovotny/wp-phpunit-helpers": "0.1.0",
         "phpunit/phpunit": "4.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src"
+        ],
+        "files": [
+            "wp-ahalogy.php"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "vendor/phpunit",
+            "vendor/sebastian",
+            "vendor/symfony"
+        ]
     }
 }

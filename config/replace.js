@@ -14,7 +14,6 @@ module.exports = (function () {
             description: 'Adds Ahalogy to your WordPress site.',
             git: 'git://github.com/manovotny/wp-ahalogy.git',
             name: 'WP Ahalogy',
-            package: 'WP_Ahalogy',
             slug: 'wp-ahalogy',
             url: 'https://github.com/manovotny/wp-ahalogy',
             version: '1.0.0'

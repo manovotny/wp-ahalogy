@@ -25,18 +25,16 @@ if ( ! defined( 'WPINC' ) ) {
 
 }
 
-/* Libraries
+/* Composer
 ---------------------------------------------------------------------------------- */
 
-require_once __DIR__ . '/lib/wp-enqueue-util/wp-enqueue-util.php';
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 
-/* Classes
----------------------------------------------------------------------------------- */
-
-if ( ! class_exists( 'WP_Ahalogy' ) ) {
-
-    require_once __DIR__ . '/classes/class-wp-ahalogy.php';
-
-    WP_Ahalogy::get_instance();
+    require __DIR__ . '/vendor/autoload.php';
 
 }
+
+/* Initialization
+---------------------------------------------------------------------------------- */
+
+WP_Ahalogy::get_instance();

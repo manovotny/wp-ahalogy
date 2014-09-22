@@ -92,7 +92,7 @@ class WP_Ahalogy {
         $wp_enqueue_util = WP_Enqueue_Util::get_instance();
 
         $handle = $this->slug . '-script';
-        $relative_path = __DIR__ . '/../js/';
+        $relative_path = __DIR__ . '/../site/js/';
         $filename = 'bundle.min.js';
         $filename_debug = 'bundle.concat.js';
         $dependencies = array();

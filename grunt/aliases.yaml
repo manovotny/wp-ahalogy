@@ -12,26 +12,22 @@ config:
   - rename
 
 build:
-  - clean:js
+  - clean
   - lint
   - test
   - browserify:admin
   - browserify:site
 
 generate:
-  - makepot
   - browserify
 
 update:
-  - clean:lib
   - shell:update
-  - copy
   - curl
   - build
 
 lint:
   - jshint
-  - jslint
   - phplint
 
 test:
@@ -42,3 +38,4 @@ release:
   - replace:project_version
   - replace:update_project
   - generate
+  - shell:release
