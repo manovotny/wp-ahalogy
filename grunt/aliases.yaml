@@ -1,42 +1,59 @@
+# Default
+#----------------------------------------------------------------------------------
+
 default:
   - build
 
-init:
-  - config
-  - shell:install
-  - update
-  - build
+# Setup
+#----------------------------------------------------------------------------------
 
-config:
+init:
   - replace
   - rename
+  - shell:init
+  - build
 
-build:
-  - clean
-  - lint
-  - test
-  - browserify:admin
-  - browserify:site
-
-generate:
-  - browserify
+refresh:
+  - shell:refresh
 
 update:
   - shell:update
-  - curl
   - build
+
+upgrade:
+  - shell:upgrade
+
+# Build
+#----------------------------------------------------------------------------------
+
+build:
+  - clean:build
+  - curl
+  - lint
+  - test
+  - js
 
 lint:
   - jshint
+  - jscs
   - phplint
 
 test:
   - phpunit
 
+js:
+  - browserify
+
+# Release
+#----------------------------------------------------------------------------------
+
 release:
   - build
   - replace:project_version
   - replace:update_project
-  - generate
-  - shell:release
-  - copy
+
+# Deploy
+#----------------------------------------------------------------------------------
+
+deploy:
+  - clean:deploy

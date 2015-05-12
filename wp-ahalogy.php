@@ -1,8 +1,5 @@
 <?php
 /**
- * @package WP_Ahalogy
- *
- * @wordpress-plugin
  * Plugin Name: WP Ahalogy
  * Plugin URI: https://github.com/manovotny/wp-ahalogy
  * Description: Adds Ahalogy to your WordPress site.
