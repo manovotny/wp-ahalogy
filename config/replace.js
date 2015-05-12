@@ -16,7 +16,7 @@ module.exports = (function () {
             name: 'WP Ahalogy',
             slug: 'wp-ahalogy',
             url: 'https://github.com/manovotny/wp-ahalogy',
-            version: '1.0.2'
+            version: '2.0.0'
         },
         translations: {
             domain: 'wp-ahalogy',

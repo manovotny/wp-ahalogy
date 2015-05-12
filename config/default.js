@@ -25,7 +25,7 @@ module.exports = (function () {
             slug: 'wp-ahalogy',
             type: 'plugin', // Should be `plugin` or `theme`.
             url: 'https://github.com/manovotny/wp-ahalogy',
-            version: '1.0.2'
+            version: '2.0.0'
         }
     };
 

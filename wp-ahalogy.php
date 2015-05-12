@@ -3,7 +3,7 @@
  * Plugin Name: WP Ahalogy
  * Plugin URI: https://github.com/manovotny/wp-ahalogy
  * Description: Adds Ahalogy to your WordPress site.
- * Version: 1.0.2
+ * Version: 2.0.0
  * Author: Michael Novotny
  * Author URI: http://manovotny.com
  * License: GPL-3.0+

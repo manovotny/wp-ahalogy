@@ -24,7 +24,7 @@ class WP_Ahalogy {
      *
      * @var string
      */
-    protected $version = '1.0.2';
+    protected $version = '2.0.0';
 
     /* Public
     ---------------------------------------------------------------------------------- */
