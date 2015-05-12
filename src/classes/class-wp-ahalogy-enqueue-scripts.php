@@ -60,15 +60,9 @@ class WP_Ahalogy_Enqueue_Scripts {
         $filename_debug = 'bundle.concat.js';
         $dependencies = array();
 
-        $clientId = '';
+        $client_id = apply_filters( 'wp_ahalogy_client_id', '' );
 
-        if ( defined( 'WP_AHALOGY_CLIENT_ID' ) ) {
-
-            $clientId = WP_AHALOGY_CLIENT_ID;
-
-        }
-
-        if ( empty( $clientId ) ) {
+        if ( empty( $client_id ) ) {
 
             return;
 
@@ -76,7 +70,7 @@ class WP_Ahalogy_Enqueue_Scripts {
 
         $data = array(
             'options' => array(
-                'clientId' => $clientId
+                'clientId' => $client_id
             )
         );
 
