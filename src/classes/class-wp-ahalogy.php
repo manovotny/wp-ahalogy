@@ -1,15 +1,9 @@
 <?php
-/**
- * @package WP_Ahalogy
- */
 
 class WP_Ahalogy {
 
     /* Properties
     ---------------------------------------------------------------------------------- */
-
-    /* Instance
-    ---------------------------------------------- */
 
     /**
      * Instance of the class.
@@ -17,6 +11,23 @@ class WP_Ahalogy {
      * @var WP_Ahalogy
      */
     protected static $instance = null;
+
+    /**
+     * Ahalogy analytics slug.
+     *
+     * @var string
+     */
+    protected $slug = 'wp-ahalogy';
+
+    /**
+     * Version, used for cache-busting of style and script file references.
+     *
+     * @var string
+     */
+    protected $version = '1.0.2';
+
+    /* Public
+    ---------------------------------------------------------------------------------- */
 
     /**
      * Get accessor method for instance property.
@@ -35,100 +46,36 @@ class WP_Ahalogy {
 
     }
 
-    /* Localization Handle
-    ---------------------------------------------- */
-
     /**
-     * Getter method for localization handle.
+     * Gets localization handle.
      *
      * @return string Localization handle.
      */
-    private function get_localization_handle() {
+    public function get_localization_handle() {
 
         return str_replace( '-', '_', $this->slug );
 
     }
 
-    /* Slug
-    ---------------------------------------------- */
-
     /**
-     * Ahalogy analytics slug.
+     * Gets slug.
      *
-     * @var string
+     * @return string Slug.
      */
-    protected $slug = 'wp-ahalogy';
+    public function get_slug() {
 
-    /* Version
-    ---------------------------------------------- */
-
-    /**
-     * Version, used for cache-busting of style and script file references.
-     *
-     * @var string
-     */
-    protected $version = '1.0.2';
-
-    /* Constructor
-    ---------------------------------------------------------------------------------- */
-
-    /**
-     * Initialize class.
-     */
-    public function __construct() {
-
-        add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+        return $this->slug;
 
     }
 
-    /* Methods
-    ---------------------------------------------------------------------------------- */
-
     /**
-     * Enqueues scripts.
+     * Gets version.
+     *
+     * @return string Version.
      */
-    public function enqueue_scripts() {
+    public function get_version() {
 
-        $wp_enqueue_util = WP_Enqueue_Util::get_instance();
-
-        $handle = $this->slug . '-script';
-        $relative_path = __DIR__ . '/../site/js/';
-        $filename = 'bundle.min.js';
-        $filename_debug = 'bundle.concat.js';
-        $dependencies = array();
-
-        $clientId = '';
-
-        if ( defined( 'WP_AHALOGY_CLIENT_ID' ) ) {
-
-            $clientId = WP_AHALOGY_CLIENT_ID;
-
-        }
-
-        if ( empty( $clientId ) ) {
-
-            return;
-
-        }
-
-        $data = array(
-            'options' => array(
-                'clientId' => $clientId
-            )
-        );
-
-        $options = new WP_Enqueue_Options(
-            $handle,
-            $relative_path,
-            $filename,
-            $filename_debug,
-            $dependencies,
-            $this->version
-        );
-
-        $options->set_localization( $this->get_localization_handle(),  $data );
-
-        $wp_enqueue_util->enqueue_script( $options );
+        return $this->version;
 
     }
 

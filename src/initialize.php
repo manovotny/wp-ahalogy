@@ -1,3 +1,3 @@
 <?php
 
-WP_Ahalogy::get_instance();
+WP_Ahalogy_Enqueue_Scripts::get_instance();
